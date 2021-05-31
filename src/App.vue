@@ -8,7 +8,6 @@
 
 <script>
 import { mapActions } from "vuex";
-import "../res/theme.css"; //theme
 import "primevue/resources/primevue.min.css"; //core css
 import "primeicons/primeicons.css"; //icons
 import "primeflex/primeflex.css";
