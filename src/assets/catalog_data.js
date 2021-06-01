@@ -4,9 +4,9 @@ exports.data = [
     image:
       'https://reklaam.postimeesgrupp.ee/wp-content/uploads/2019/09/Trykk_HK_MK_1_1.png',
     advertiser: 'Postimees',
-    description: '289×289 (1/1)',
+    description: '289x289 (1/1)',
     price: 2800,
-    size: 289 * 289,
+    size: 289 * 289
   },
   {
     name: 'Cover of postimees',
@@ -15,7 +15,7 @@ exports.data = [
     advertiser: 'Postimees',
     description: '289x93 (1/4)',
     price: 1100,
-    size: 289 * 93,
+    size: 289 * 93
   },
   {
     name: 'Cover of Postimees',
@@ -24,7 +24,7 @@ exports.data = [
     advertiser: 'Postimees',
     description: '289x45 (1/8)',
     price: 468,
-    size: 289 * 45,
+    size: 289 * 45
   },
   {
     name: 'Cover of Postimees',
@@ -33,7 +33,7 @@ exports.data = [
     advertiser: 'Postimees',
     description: '93x45 (1/24)',
     price: 220,
-    size: 93 * 45,
+    size: 93 * 45
   },
   {
     name: 'Cover of Postimees',
@@ -42,8 +42,8 @@ exports.data = [
     advertiser: 'Postimees',
     description: '45x45 (1/48)',
     price: 100,
-    size: 45 * 45,
-  },
+    size: 45 * 45
+  }
 ];
 
 exports.infoData = [

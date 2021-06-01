@@ -1,113 +1,66 @@
 <template>
-  <div class="home p-pt-6 p-grid p-nogutter p-jc-center">
-    <div class="p-col-12">
-      <img class="logo" alt="AdGrab logo" src="../assets/logo.png" />
+  <div id="home">
+    <div class="slide p-grid p-m-0" id="slide-1">
+      <div class="p-col-10 p-md-5 p-offset-1">
+        <div id="info">
+          <h1 id="firm" class="p-pt-4">AdGrab</h1>
+          <h2 id="slogan">
+            Build your own advertisement campaign with confidence
+          </h2>
+          <Button
+            class="p-button-lg p-button-rounded p-mt-3"
+            label="Get started"
+          />
+        </div>
+      </div>
+      <div class="p-col-10 p-md-5 p-m-0 p-p-0 p-grid">
+        <img
+          src="../assets/landing.png"
+          class="p-m-auto"
+          alt="Landing page"
+          width="460"
+        />
+      </div>
     </div>
-    <div>
-      <HelloWorld msg="Welcome to AdGrab" />
-      <HelloWorld
-        side-msg="AdGrab is a startup offering easy advertisement solutions."
-      />
-      <Button
-        label="DEMO"
-        icon="pi pi-check"
-        iconPos="right"
-        class="p-button-lg"
-        v-on:click="$router.push('catalog')"
-      />
-    </div>
-    <div class="p-col-12 p-m-6 p-grid p-jc-around p-ai-center">
-      <Card class="roundedCard p-shadow-6 p-col-2">
-        <template #header>
-          <img src="../assets/card1.jpeg" style="height: 15rem" />
-        </template>
-        <template #subtitle>
-                Lorem ipsum
-            </template>
-        <template #content>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam volutpat tellus felis, id maximus dui
-            feugiat eget. Sed lacus libero, finibus sed elit nec, tempus viverra risus. Vivamus lacus mi, accumsan quis
-            ornare ut, euismod sit amet metus. Cras a turpis metus.
-          </p>
-        </template>
-      </Card>
-      <Card class="roundedCard p-shadow-6 p-col-2">
-        <template #header>
-          <img src="../assets/card2.jpeg" style="height: 15rem" />
-        </template>
-        <template #subtitle>
-                Lorem ipsum
-            </template>
-        <template #content>
-          <p>p-jc-center
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam volutpat tellus felis, id maximus dui
-            feugiat eget. Sed lacus libero, finibus sed elit nec, tempus viverra risus. Vivamus lacus mi, accumsan quis
-            ornare ut, euismod sit amet metus. Cras a turpis metus.
-          </p>
-        </template>
-      </Card>
-      <Card class="roundedCard p-shadow-6 p-col-2">
-        <template #header>
-          <img src="../assets/card3.jpeg" style="height: 15rem" />
-        </template>
-        <template #subtitle>
-                Lorem ipsum
-            </template>
-        <template #content>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam volutpat tellus felis, id maximus dui
-            feugiat eget. Sed lacus libero, finibus sed elit nec, tempus viverra risus. Vivamus lacus mi, accumsan quis
-            ornare ut, euismod sit amet metus. Cras a turpis metus.
-          </p>
-        </template>
-      </Card>
-      <Card class="roundedCard p-shadow-6 p-col-2">
-        <template #header>
-          <img src="../assets/card4.jpeg" style="height: 15rem" />
-        </template>
-        <template #subtitle>
-                Lorem ipsum
-            </template>
-        <template #content>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam volutpat tellus felis, id maximus dui
-            feugiat eget. Sed lacus libero, finibus sed elit nec, tempus viverra risus. Vivamus lacus mi, accumsan quis
-            ornare ut, euismod sit amet metus. Cras a turpis metus.
-          </p>
-        </template>
-      </Card>
-    </div>
+    <div class="slide" id="slide-2">Slide</div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+// import HelloWorld from '@/components/HelloWorld.vue';
 import Button from 'primevue/button';
-import Card from 'primevue/card';
+// import Card from 'primevue/card';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    // HelloWorld,
     Button,
-    Card,
+    // Card,
   },
 };
 </script>
-<style lang="css">
-  .logo {
-    border-radius: 50%;
-    max-width: 7vw;
-  }
-  .roundedCard {
-    border-radius: 3%;
-  }
+<style lang="scss">
+.slide {
+  font-family: Montserrat, sans-serif;
+}
 
-  .home {
-    background-image: url("../assets/bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+#firm {
+  font-size: 3.5rem;
+}
+
+#slide-1 {
+  height: 90vh;
+
+  #info {
+    text-align: left;
+    padding: 0 4rem;
   }
+}
+
+#slide-2 {
+  background-color: #22283a;
+  height: 100vh;
+}
 </style>
