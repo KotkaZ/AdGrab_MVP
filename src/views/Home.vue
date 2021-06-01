@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to AdGrab" sideMsg="Worlds first automatic advertisement sales platform"/>
+    <HelloWorld msg="Welcome to AdGrab" />
     <router-link to="/demo">DEMO</router-link>
   </div>
 </template>
