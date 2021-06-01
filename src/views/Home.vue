@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to AdGrab" />
+    <router-link to="/demo">DEMO</router-link>
   </div>
 </template>
 
