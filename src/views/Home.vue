@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+  <div class="home p-mt-6">
+    <img class="logo" alt="AdGrab logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to AdGrab" />
     <router-link to="/demo">DEMO</router-link>
   </div>
@@ -17,3 +17,9 @@ export default {
   },
 };
 </script>
+<style lang="css">
+  .logo {
+    border-radius: 50px;
+    max-width: 100px;
+  }
+</style>
