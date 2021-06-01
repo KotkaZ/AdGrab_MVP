@@ -26,11 +26,17 @@
           <div class="product-grid-item card">
             <div class="product-grid-item-top">
               <div>
-                <i class="pi pi-tag product-category-icon"></i>
+                <i class="pi pi-tag product-category-icon" aria:haspopup="true" aria-controls="overlay_panel"></i>
                 <span class="product-category">{{
                   slotProps.data.advertiser
                 }}</span>
               </div>
+              <i class="pi pi-info-circle p-jc-end"  @click="toggle"></i>
+        <OverlayPanel ref="op" appendTo="body" :showCloseIcon="true" id="overlay_panel" style="width: 150px" :breakpoints="{'400px': '75vw'}">
+            <DataTable :value="infoData" :rows="5" >
+                <Column field="name" header="Name" sortable style="width: 50%"></Column>
+            </DataTable>
+        </OverlayPanel>
             </div>
 
             <div class="product-grid-item-content">
@@ -65,10 +71,14 @@ import DataView from 'primevue/dataview';
 import Dropdown from 'primevue/dropdown';
 import Button from 'primevue/button';
 import Nav from '../components/Nav'
+import OverlayPanel from 'primevue/overlaypanel';
 import { data as catalogData } from '../assets/catalog_data';
+import { infoData } from '../assets/catalog_data'
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
 
 export default {
-  components: { DataView, Dropdown, Button, Nav},
+  components: { DataView, Dropdown, Button, Nav, OverlayPanel, DataTable, Column},
   setup() {
     const items = ref(catalogData);
     const layout = ref('grid');
@@ -96,7 +106,7 @@ export default {
         sortField.value = value;
         sortKey.value = sortValue;
       }
-    };
+    }
 
     return {
       items,
@@ -106,8 +116,15 @@ export default {
       sortField,
       sortOptions,
       onSortChange,
+      infoData
     };
   },
+    methods: {
+        toggle(event) {
+            this.$refs.op.toggle(event);
+            console.log(this.infoData)
+        },
+    },
 };
 </script>
 
