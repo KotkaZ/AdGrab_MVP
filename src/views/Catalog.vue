@@ -3,8 +3,6 @@
     <DataView
       :value="items"
       :layout="layout"
-      :paginator="true"
-      :rows="9"
       :sortOrder="sortOrder"
       :sortField="sortField"
     >
@@ -19,52 +17,6 @@
               @change="onSortChange($event)"
             />
           </div>
-          <div class="p-col-6" style="text-align: right">
-            <!-- <DataViewLayoutOptions v-model="layout" /> -->
-          </div>
-        </div>
-      </template>
-
-      <template #list="slotProps">
-        <div class="p-col-12">
-          <div class="product-list-item">
-            <img
-              src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png"
-              :alt="slotProps.data.name"
-              width="50"
-              height="50"
-            />
-            <div class="product-list-detail">
-              <!-- <div class="product-name">{{ slotProps.data.name }}</div>
-              <div class="product-description">
-                {{ slotProps.data.description }}
-              </div>
-              <Rating
-                :modelValue="slotProps.data.rating"
-                :readonly="true"
-                :cancel="false"
-              ></Rating>
-              <i class="pi pi-tag product-category-icon"></i
-              ><span class="product-category">{{
-                slotProps.data.category
-              }}</span> -->
-            </div>
-            <div class="product-list-action">
-              <!-- <span class="product-price">${{ slotProps.data.price }}</span>
-              <Button
-                icon="pi pi-shopping-cart"
-                label="Add to Cart"
-                :disabled="slotProps.data.inventoryStatus === 'OUTOFSTOCK'"
-              ></Button>
-              <span
-                :class="
-                  'product-badge status-' +
-                  slotProps.data.inventoryStatus.toLowerCase()
-                "
-                >{{ slotProps.data.inventoryStatus }}</span
-              > -->
-            </div>
-          </div>
         </div>
       </template>
 
@@ -78,31 +30,23 @@
                   slotProps.data.category
                 }}</span>
               </div>
-              <!-- <span
-                :class="
-                  'product-badge status-' +
-                  slotProps.data.inventoryStatus.toLowerCase()
-                "
-                >{{ slotProps.data.inventoryStatus }}</span
-              > -->
             </div>
+
             <div class="product-grid-item-content">
               <img
-                src="https://glenella.com/wp-content/uploads/2020/05/the-mountains-of-North-Georgia-min.jpg"
+                :src="
+                  slotProps.data.image ||
+                  'https://glenella.com/wp-content/uploads/2020/05/the-mountains-of-North-Georgia-min.jpg'
+                "
                 :alt="slotProps.data.name"
-                width="200"
+                width="100"
               />
               <div class="product-name">{{ slotProps.data.name }}</div>
               <div class="product-description">
                 {{ slotProps.data.description }}
               </div>
-              <!--
-              <Rating
-                :modelValue="slotProps.data.rating"
-                :readonly="true"
-                :cancel="false"
-              ></Rating> -->
             </div>
+
             <div class="product-grid-item-bottom">
               <span class="product-price">{{ slotProps.data.price }}€</span>
               <Button icon="pi pi-shopping-cart"></Button>
@@ -115,10 +59,12 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
-import DataView from "primevue/dataview";
-import Dropdown from "primevue/dropdown";
-import Button from "primevue/button";
+import { onMounted, ref } from 'vue';
+import DataView from 'primevue/dataview';
+import Dropdown from 'primevue/dropdown';
+import Button from 'primevue/button';
+
+import { data as catalogData } from '../assets/catalog_data';
 
 export default {
   components: { DataView, Dropdown, Button },
@@ -126,28 +72,22 @@ export default {
     const items = ref();
 
     onMounted(() => {
-      items.value = [
-        {
-          name: "Postimehe esikaane reklaam",
-          category: "Postimees",
-          price: 2800,
-        },
-      ];
+      items.value = catalogData;
     });
 
-    const layout = ref("grid");
+    const layout = ref('grid');
     const sortKey = ref();
     const sortOrder = ref();
     const sortField = ref();
     const sortOptions = ref([
-      { label: "Price High to Low", value: "!price" },
-      { label: "Price Low to High", value: "price" },
+      { label: 'Price High to Low', value: '!price' },
+      { label: 'Price Low to High', value: 'price' },
     ]);
     const onSortChange = (event) => {
       const value = event.value.value;
       const sortValue = event.value;
 
-      if (value.indexOf("!") === 0) {
+      if (value.indexOf('!') === 0) {
         sortOrder.value = -1;
         sortField.value = value.substring(1, value.length);
         sortKey.value = sortValue;
