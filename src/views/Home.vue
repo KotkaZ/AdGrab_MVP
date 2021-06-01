@@ -4,15 +4,9 @@
       <img class="logo" alt="AdGrab logo" src="../assets/logo.png" />
     </div>
     <div>
-      <Card style="width:25rem" class="card">
-        <template #header>
-          <HelloWorld msg="Welcome to AdGrab" />
-        </template>
-        <template #content>
-          <HelloWorld side-msg="AdGrab is a startup offering easy advertisement solutions." />
-          <Button label="DEMO" icon="pi pi-check" iconPos="right" class="p-button-lg" v-on:click="$router.push('demo')"/>
-        </template>
-      </Card>
+      <HelloWorld msg="Welcome to AdGrab" />
+      <HelloWorld side-msg="AdGrab is a startup offering easy advertisement solutions." />
+      <Button label="DEMO" icon="pi pi-check" iconPos="right" class="p-button-lg" v-on:click="$router.push('demo')"/>
     </div>
   </div>
 </template>
@@ -21,14 +15,12 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import Button from 'primevue/button';
-import Card from 'primevue/card';
 
 export default {
   name: "Home",
   components: {
     HelloWorld,
-    Button,
-    Card
+    Button
   },
 };
 
