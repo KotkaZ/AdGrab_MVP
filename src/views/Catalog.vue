@@ -13,7 +13,7 @@
               v-model="sortKey"
               :options="sortOptions"
               optionLabel="label"
-              placeholder="Sort By Price"
+              placeholder="Sort"
               @change="onSortChange($event)"
             />
           </div>
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import DataView from 'primevue/dataview';
 import Dropdown from 'primevue/dropdown';
 import Button from 'primevue/button';
@@ -69,12 +69,7 @@ import { data as catalogData } from '../assets/catalog_data';
 export default {
   components: { DataView, Dropdown, Button },
   setup() {
-    const items = ref();
-
-    onMounted(() => {
-      items.value = catalogData;
-    });
-
+    const items = ref(catalogData);
     const layout = ref('grid');
     const sortKey = ref();
     const sortOrder = ref();
@@ -82,6 +77,10 @@ export default {
     const sortOptions = ref([
       { label: 'Price High to Low', value: '!price' },
       { label: 'Price Low to High', value: 'price' },
+      { label: 'Size Small to Big', value: '' },
+      { label: 'Size Big to Small', value: '' },
+      { label: 'Advertiser A to Z', value: '' },
+      { label: 'Advertiser Z to A', value: '' },
     ]);
     const onSortChange = (event) => {
       const value = event.value.value;
