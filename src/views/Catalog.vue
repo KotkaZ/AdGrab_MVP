@@ -27,7 +27,7 @@
               <div>
                 <i class="pi pi-tag product-category-icon"></i>
                 <span class="product-category">{{
-                  slotProps.data.category
+                  slotProps.data.advertiser
                 }}</span>
               </div>
             </div>
@@ -77,10 +77,10 @@ export default {
     const sortOptions = ref([
       { label: 'Price High to Low', value: '!price' },
       { label: 'Price Low to High', value: 'price' },
-      { label: 'Size Small to Big', value: '' },
-      { label: 'Size Big to Small', value: '' },
-      { label: 'Advertiser A to Z', value: '' },
-      { label: 'Advertiser Z to A', value: '' },
+      { label: 'Size Small to Big', value: 'size' },
+      { label: 'Size Big to Small', value: '!size' },
+      { label: 'Advertiser A to Z', value: 'advertiser' },
+      { label: 'Advertiser Z to A', value: '!advertiser' },
     ]);
     const onSortChange = (event) => {
       const value = event.value.value;
