@@ -41,16 +41,18 @@
           <div class="product-grid-item card">
             <div class="product-grid-item-top">
               <div>
-                <i class="pi pi-tag product-category-icon" aria:haspopup="true" aria-controls="overlay_panel"></i>
+                <i class="pi pi-tag product-category-icon"></i>
                 <span class="product-category">{{
                   slotProps.data.advertiser
                 }}</span>
               </div>
-              <i class="pi pi-info-circle p-jc-end"  @click="toggle"></i>
-        <OverlayPanel ref="op" appendTo="body" :showCloseIcon="true" id="overlay_panel" style="width: 150px" :breakpoints="{'400px': '75vw'}">
-            <DataTable :value="infoData" :rows="5" >
-                <Column field="name" header="Name" sortable style="width: 50%"></Column>
-            </DataTable>
+              <i class="pi pi-info-circle p-jc-end"  @mouseover="toggle" @mouseleave="toggle"></i>
+        <OverlayPanel ref="op" appendTo="body"  id="overlay_panel" style="width: 50%">
+            <img class="infoImage" src="../assets/info1.png">
+            <img class="infoImage" src="../assets/info2.png">
+            <img class="infoImage" src="../assets/info3.png">
+            <img class="infoImage" src="../assets/info4.png">
+            <img class="infoImage" src="../assets/info5.png">
         </OverlayPanel>
             </div>
 
@@ -89,12 +91,9 @@ import Nav from '../components/Nav'
 import OverlayPanel from 'primevue/overlaypanel';
 import Listbox from 'primevue/listbox';
 import { data as catalogData } from '../assets/catalog_data';
-import { infoData } from '../assets/catalog_data'
-import DataTable from 'primevue/datatable';
-import Column from 'primevue/column';
 
 export default {
-  components: { DataView, Dropdown, Button, Nav, OverlayPanel, DataTable, Column, Listbox},
+  components: { DataView, Dropdown, Button, Nav, OverlayPanel, Listbox},
   setup() {
     const items = ref(catalogData);
     const layout = ref('grid');
@@ -157,13 +156,11 @@ export default {
       sortField,
       sortOptions,
       onSortChange,
-      infoData
     };
   },
     methods: {
         toggle(event) {
             this.$refs.op.toggle(event);
-            console.log(this.infoData)
         },
     },
 };
@@ -201,6 +198,9 @@ export default {
   font-weight: 600;
   vertical-align: middle;
 }
+.infoImage {
+    width: 30%;
+  }
 
 ::v-deep(.product-list-item) {
   display: flex;
@@ -263,6 +263,8 @@ export default {
     font-size: 1.5rem;
     font-weight: 600;
   }
+
+  
 }
 
 @media screen and (max-width: 576px) {
@@ -294,6 +296,7 @@ export default {
       align-items: center;
       width: 100%;
     }
+
   }
 }
 </style>
