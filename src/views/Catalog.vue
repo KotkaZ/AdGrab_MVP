@@ -1,4 +1,5 @@
 <template>
+  <Nav/>
   <div class="card">
     <DataView
       :value="items"
@@ -63,11 +64,11 @@ import { ref } from 'vue';
 import DataView from 'primevue/dataview';
 import Dropdown from 'primevue/dropdown';
 import Button from 'primevue/button';
-
+import Nav from '../components/Nav'
 import { data as catalogData } from '../assets/catalog_data';
 
 export default {
-  components: { DataView, Dropdown, Button },
+  components: { DataView, Dropdown, Button, Nav},
   setup() {
     const items = ref(catalogData);
     const layout = ref('grid');
