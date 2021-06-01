@@ -1,5 +1,5 @@
 <template>
-  <div class="home p-mt-6 p-grid p-nogutter p-jc-center">
+  <div class="home p-pt-6 p-grid p-nogutter p-jc-center">
     <div class="p-col-12">
       <img class="logo" alt="AdGrab logo" src="../assets/logo.png" />
     </div>
@@ -13,14 +13,14 @@
         <template #header>
           <img src="../assets/card1.jpeg" style="height: 15rem" />
         </template>
+        <template #subtitle>
+                Lorem ipsum
+            </template>
         <template #content>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam volutpat tellus felis, id maximus dui
             feugiat eget. Sed lacus libero, finibus sed elit nec, tempus viverra risus. Vivamus lacus mi, accumsan quis
-            ornare ut, euismod sit amet metus. Cras a turpis metus. Praesent in lobortis massa, non malesuada tellus.
-            Aliquam nec vulputate massa. Donec dignissim rutrum metus. Curabitur a felis vel est ultricies faucibus.
-            Vivamus feugiat egestas tempor. Vivamus in odio vitae eros elementum sagittis. Aenean vel imperdiet dolor.
-            Donec auctor sed elit a tempus.
+            ornare ut, euismod sit amet metus. Cras a turpis metus.
           </p>
         </template>
       </Card>
@@ -28,14 +28,14 @@
         <template #header>
           <img src="../assets/card2.jpeg" style="height: 15rem" />
         </template>
+        <template #subtitle>
+                Lorem ipsum
+            </template>
         <template #content>
           <p>p-jc-center
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam volutpat tellus felis, id maximus dui
             feugiat eget. Sed lacus libero, finibus sed elit nec, tempus viverra risus. Vivamus lacus mi, accumsan quis
-            ornare ut, euismod sit amet metus. Cras a turpis metus. Praesent in lobortis massa, non malesuada tellus.
-            Aliquam nec vulputate massa. Donec dignissim rutrum metus. Curabitur a felis vel est ultricies faucibus.
-            Vivamus feugiat egestas tempor. Vivamus in odio vitae eros elementum sagittis. Aenean vel imperdiet dolor.
-            Donec auctor sed elit a tempus.
+            ornare ut, euismod sit amet metus. Cras a turpis metus.
           </p>
         </template>
       </Card>
@@ -43,14 +43,14 @@
         <template #header>
           <img src="../assets/card3.jpeg" style="height: 15rem" />
         </template>
+        <template #subtitle>
+                Lorem ipsum
+            </template>
         <template #content>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam volutpat tellus felis, id maximus dui
             feugiat eget. Sed lacus libero, finibus sed elit nec, tempus viverra risus. Vivamus lacus mi, accumsan quis
-            ornare ut, euismod sit amet metus. Cras a turpis metus. Praesent in lobortis massa, non malesuada tellus.
-            Aliquam nec vulputate massa. Donec dignissim rutrum metus. Curabitur a felis vel est ultricies faucibus.
-            Vivamus feugiat egestas tempor. Vivamus in odio vitae eros elementum sagittis. Aenean vel imperdiet dolor.
-            Donec auctor sed elit a tempus.
+            ornare ut, euismod sit amet metus. Cras a turpis metus.
           </p>
         </template>
       </Card>
@@ -58,14 +58,14 @@
         <template #header>
           <img src="../assets/card4.jpeg" style="height: 15rem" />
         </template>
+        <template #subtitle>
+                Lorem ipsum
+            </template>
         <template #content>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam volutpat tellus felis, id maximus dui
             feugiat eget. Sed lacus libero, finibus sed elit nec, tempus viverra risus. Vivamus lacus mi, accumsan quis
-            ornare ut, euismod sit amet metus. Cras a turpis metus. Praesent in lobortis massa, non malesuada tellus.
-            Aliquam nec vulputate massa. Donec dignissim rutrum metus. Curabitur a felis vel est ultricies faucibus.
-            Vivamus feugiat egestas tempor. Vivamus in odio vitae eros elementum sagittis. Aenean vel imperdiet dolor.
-            Donec auctor sed elit a tempus.
+            ornare ut, euismod sit amet metus. Cras a turpis metus.
           </p>
         </template>
       </Card>
@@ -96,5 +96,11 @@ export default {
   }
   .roundedCard {
     border-radius: 3%;
+  }
+
+  .home {
+    background-image: url("../assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 </style>
