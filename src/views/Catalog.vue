@@ -9,7 +9,7 @@
     >
       <template #header>
         <div class="p-grid p-nogutter">
-          <div class="p-col-6" style="text-align: left">
+          <div class="p-col">
             <Dropdown
               v-model="sortKey"
               :options="sortOptions"
@@ -18,6 +18,21 @@
               @change="onSortChange($event)"
             />
           </div>
+
+          <div class="p-col">
+            <Listbox v-model="selectedGroupedFilter"  :multiple="true"  :options="filerOption" optionLabel="label" style="width:15rem" optionGroupLabel="label" optionGroupChildren="items" listStyle="max-height:250px">
+                <template #optiongroup="slotProps">
+                    <div class="p-d-flex p-ai-center country-item">
+                        <div>{{slotProps.option.label}}</div>
+                    </div>
+                </template>
+            </Listbox>
+          </div>
+
+                    <div class="p-col">
+        <Listbox v-model="selectedSizes" :multipe="true" :options="sizes" optionLabel="name" style="width:15rem" />
+          </div>
+
         </div>
       </template>
 
@@ -64,26 +79,49 @@ import { ref } from 'vue';
 import DataView from 'primevue/dataview';
 import Dropdown from 'primevue/dropdown';
 import Button from 'primevue/button';
-import Nav from '../components/Nav'
+import Listbox from 'primevue/listbox';
+import Nav from '../components/Nav';
 import { data as catalogData } from '../assets/catalog_data';
 
 export default {
-  components: { DataView, Dropdown, Button, Nav},
+  components: { DataView, Dropdown, Button, Nav, Listbox },
   setup() {
     const items = ref(catalogData);
     const layout = ref('grid');
     const sortKey = ref();
     const sortOrder = ref();
+    const selectedGroupedCity = ref();
     const sortField = ref();
     const sortOptions = ref([
       { label: 'Price High to Low', value: '!price' },
-      { label: 'Price Low to High', value: 'price' },
-      { label: 'Size Small to Big', value: 'size' },
-      { label: 'Size Big to Small', value: '!size' },
-      { label: 'Advertiser A to Z', value: 'advertiser' },
-      { label: 'Advertiser Z to A', value: '!advertiser' },
+      { label: 'Price Low to High', value: 'price' }
     ]);
-    const onSortChange = (event) => {
+    const sizes = ref([
+      { name: '1/1', code: 'NY' },
+      { name: '1/2', code: 'RM' },
+      { name: '1/4', code: 'LDN' },
+      { name: '1/8', code: 'IST' },
+      { name: 'etc...', code: 'PRS' }
+    ]);
+    const filerOption = ref([
+      {
+        label: 'Postimees',
+        code: 'DE',
+        items: [
+          { label: 'Cover page', value: 'Berlin' },
+          { label: 'Page 3', value: 'Frankfurt' },
+          { label: 'Text page', value: 'Hamburg' },
+          { label: 'Free placement', value: 'Munich' },
+          { label: 'Free time*', value: 'Munich' }
+        ]
+      },
+      {
+        label: 'Äripäev',
+        code: 'US',
+        items: [{ label: 'Free placement', value: 'Munich' }]
+      }
+    ]);
+    const onSortChange = event => {
       const value = event.value.value;
       const sortValue = event.value;
 
@@ -102,12 +140,15 @@ export default {
       items,
       layout,
       sortKey,
+      selectedGroupedCity,
+      sizes,
       sortOrder,
+      filerOption,
       sortField,
       sortOptions,
-      onSortChange,
+      onSortChange
     };
-  },
+  }
 };
 </script>
 
