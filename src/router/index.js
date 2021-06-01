@@ -1,11 +1,6 @@
-<<<<<<< Updated upstream
-import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import Demo from "../views/Demo.vue";
-=======
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../views/Home.vue';
->>>>>>> Stashed changes
+import Demo from '../views/Demo.vue';
 
 const routes = [
   {
@@ -23,8 +18,8 @@ const routes = [
       import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
   {
-    path: "/demo",
-    name: "Demo",
+    path: '/demo',
+    name: 'Demo',
     component: Demo,
   },
   {
