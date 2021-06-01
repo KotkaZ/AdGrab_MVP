@@ -1,21 +1,29 @@
 <template>
-  <div class="home p-mt-6">
-    <img class="logo" alt="AdGrab logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to AdGrab" />
-    <router-link to="/demo">DEMO</router-link>
+  <div class="home p-mt-6 p-grid p-nogutter p-jc-center">
+    <div class="p-col-12">
+      <img class="logo" alt="AdGrab logo" src="../assets/logo.png" />
+    </div>
+    <div>
+      <HelloWorld msg="Welcome to AdGrab" />
+      <HelloWorld side-msg="AdGrab is a startup offering easy advertisement solutions." />
+      <Button label="DEMO" icon="pi pi-check" iconPos="right" class="p-button-lg" v-on:click="$router.push('demo')"/>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+import Button from 'primevue/button';
 
 export default {
   name: "Home",
   components: {
     HelloWorld,
+    Button
   },
 };
+
 </script>
 <style lang="css">
   .logo {
