@@ -5,8 +5,16 @@
     </div>
     <div>
       <HelloWorld msg="Welcome to AdGrab" />
-      <HelloWorld side-msg="AdGrab is a startup offering easy advertisement solutions." />
-      <Button label="DEMO" icon="pi pi-check" iconPos="right" class="p-button-lg" v-on:click="$router.push('demo')"/>
+      <HelloWorld
+        side-msg="AdGrab is a startup offering easy advertisement solutions."
+      />
+      <Button
+        label="DEMO"
+        icon="pi pi-check"
+        iconPos="right"
+        class="p-button-lg"
+        v-on:click="$router.push('catalog')"
+      />
     </div>
     <div class="p-col-12 p-m-6 p-grid p-jc-around p-ai-center">
       <Card class="roundedCard p-shadow-6 p-col-2">
@@ -75,19 +83,18 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HelloWorld from '@/components/HelloWorld.vue';
 import Button from 'primevue/button';
 import Card from 'primevue/card';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     HelloWorld,
     Button,
-    Card
+    Card,
   },
 };
-
 </script>
 <style lang="css">
   .logo {
