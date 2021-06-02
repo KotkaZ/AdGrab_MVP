@@ -1,18 +1,29 @@
 <template>
   <div class="Nav">
-        <Toolbar>
-            <template #left>
-                <img class="logo" alt="AdGrab logo" src="../assets/logo.png" />
-                
-            </template>
+    <Toolbar>
+      <template #left>
+        <!-- <img class="logo" alt="AdGrab logo" src="../assets/logo.png" /> -->
+        <h2 class="p-m-0 p-p-0">AdGrab</h2>
+      </template>
 
-            <template #right>
-                <Button icon="pi pi-shopping-cart" class="p-button-text p-mr-2" @click="this.$router.push('/cart')" />
-                <Button class="p-button-text" type="button" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu"/>
-                <Menu id="overlay_menu" ref="menu" :model="items" :popup="true" />
-            </template>
-        </Toolbar>
-    </div>
+      <template #right>
+        <Button
+          icon="pi pi-shopping-cart"
+          class="p-button-text p-mr-2"
+          @click="this.$router.push('/cart')"
+        />
+        <Button
+          class="p-button-text"
+          type="button"
+          icon="pi pi-bars"
+          @click="toggle"
+          aria-haspopup="true"
+          aria-controls="overlay_menu"
+        />
+        <Menu id="overlay_menu" ref="menu" :model="items" :popup="true" />
+      </template>
+    </Toolbar>
+  </div>
 </template>
 
 <script>
@@ -26,18 +37,18 @@ export default {
       items: [
         {
           label: 'Active Campaigns',
-          icon: 'pi pi-flag'
+          icon: 'pi pi-flag',
         },
         {
           label: 'Settings',
-          icon: 'pi pi-cog'
+          icon: 'pi pi-cog',
         },
         {
           label: 'Logout',
           icon: 'pi pi-sign-out',
-          to: '/'
-        }
-      ]
+          to: '/',
+        },
+      ],
     };
   },
   methods: {
@@ -49,10 +60,10 @@ export default {
         severity: 'success',
         summary: 'Success',
         detail: 'Data Saved',
-        life: 3000
+        life: 3000,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
