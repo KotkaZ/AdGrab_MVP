@@ -27,13 +27,13 @@
 </template>
 
 <script>
-import Card from "primevue/card";
+import Card from 'primevue/card';
 
 export default {
   components: {
-    Card,
+    Card
   },
-  setup() {},
+  setup() {}
 };
 </script>
 

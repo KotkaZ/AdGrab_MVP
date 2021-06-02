@@ -5,20 +5,20 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
-import "primevue/resources/themes/saga-blue/theme.css"; //theme
-import "primevue/resources/primevue.min.css"; //core css
-import "primeicons/primeicons.css"; //icons
-import "primeflex/primeflex.css";
+import { mapActions } from 'vuex';
+import 'primevue/resources/themes/saga-blue/theme.css'; //theme
+import 'primevue/resources/primevue.min.css'; //core css
+import 'primeicons/primeicons.css'; //icons
+import 'primeflex/primeflex.css';
 
 export default {
   components: {},
   methods: {
-    ...mapActions(["setupHeaders"]),
+    ...mapActions(['setupHeaders'])
   },
   created() {
     this.setupHeaders();
-  },
+  }
 };
 </script>
 
