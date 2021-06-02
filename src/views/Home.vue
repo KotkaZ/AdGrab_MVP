@@ -33,33 +33,40 @@
             width="460"
           />
         </div>
-        <div class="p-col-5 text" id="pitch">
-          <p>
-            In today's age advertising is really important but finding the
-            perfect spot or combination of places to advertise on can get
-            cumbersome quite quickly.
-          </p>
-          <p>This is where AdGrab can help.</p>
-          <p>
-            AdGrab provides you powerful yet simple tools for managing
-            advertising campaigns no matter the platform you wish to advertise
-            on.
-          </p>
-          <p>Start using AdGrab today!</p>
+        <div class="p-col-5 text p-d-flex p-flex-column p-jc-center" id="pitch">
+          <div class="justify">
+            <p>
+              In today's age advertising is really important but finding the
+              perfect spot or combination of places to advertise on can get
+              cumbersome quite quickly.
+            </p>
+            <p>This is where AdGrab can help.</p>
+            <p>
+              AdGrab provides you powerful yet simple tools for managing
+              advertising campaigns no matter the platform you wish to advertise
+              on.
+            </p>
+            <p>Start using AdGrab today!</p>
+          </div>
         </div>
       </div>
     </div>
     <div class="slide" id="slide-3">
       <div class="p-grid p-m-0 p-py-6">
-        <div class="p-col-5 p-offset-1 p-pr-5" id="partner">
-          <p>
-            Become our business partner to increase the sales of your
-            advertisement service and overall income.
-          </p>
-          <Button
-            class="p-button-lg p-button-rounded p-mt-3"
-            label="Become a partner"
-          />
+        <div
+          class="p-col-5 p-offset-1 p-pr-5 p-d-flex p-flex-column p-jc-center"
+          id="partner"
+        >
+          <div class="justify">
+            <p>
+              Become our business partner to increase the sales of your
+              advertisement service and overall income.
+            </p>
+            <Button
+              class="p-button-lg p-button-rounded p-mt-3"
+              label="Become a partner"
+            />
+          </div>
         </div>
         <div class="p-col-5 p-d-flex">
           <img
@@ -71,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="slide p-m-0 p-p-4" id="slide-footer">
+    <div class="p-m-0 p-p-4" id="slide-footer">
       <p>&copy; AdGrab {{ new Date().getFullYear() }}</p>
     </div>
     <transition name="fade">
@@ -96,18 +103,13 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue';
 import Button from 'primevue/button';
 import { onMounted, ref } from 'vue';
-// import Card from 'primevue/card';
 
 export default {
   name: 'Home',
   components: {
-    // HelloWorld,
     Button,
-    // Card,
   },
   setup() {
     const scrolled = ref(false);
@@ -131,31 +133,28 @@ export default {
 <style lang="scss">
 .slide {
   font-family: Montserrat, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   text-align: left;
+  min-height: 100vh;
 }
 
 #firm {
   font-size: 3.5rem;
 }
 
-#slide-1 {
-  min-height: 90vh;
-}
-
 #slide-2,
 #slide-footer {
   background-color: #22283a;
-  // height: 100vh;
   color: white;
 }
 
 #slide-footer {
   text-align: center;
+  font-size: 1em;
 }
 
 #scroller {
-  color: white;
+  color: #000;
   position: fixed;
   width: 3rem;
   height: 3rem;
@@ -164,6 +163,11 @@ export default {
   transform: translateX(-50%);
   cursor: pointer;
   animation: pulse 1s ease-in-out infinite;
+}
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .fade-enter-active,
