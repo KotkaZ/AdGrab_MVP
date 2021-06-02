@@ -26,20 +26,22 @@
       :layout="layout"
       :sortOrder="sortOrder"
       :sortField="sortField"
+
     >
       <template #header>
-        <div class="p-grid p-nogutter">
-          <div class="p-col">
+        <div class="p-grid p-nogutter p-jc-start">
+          <div class="p-mr-3">
             <Dropdown
               v-model="sortKey"
               :options="sortOptions"
               optionLabel="label"
+              
               placeholder="Sort"
               @change="onSortChange($event)"
             />
           </div>
 
-          <div class="p-col">
+          <div>
             <Listbox v-model="selectedGroupedFilter"  :multiple="true"  :options="filerOption" optionLabel="label" style="width:15rem" optionGroupLabel="label" optionGroupChildren="items" listStyle="max-height:250px">
                 <template #optiongroup="slotProps">
                     <div class="p-d-flex p-ai-center country-item">
@@ -47,10 +49,6 @@
                     </div>
                 </template>
             </Listbox>
-          </div>
-
-                    <div class="p-col">
-        <Listbox v-model="selectedSizes" :multipe="true" :options="sizes" optionLabel="name" style="width:15rem" />
           </div>
 
         </div>
@@ -149,20 +147,18 @@ export default {
     ]);
     const filerOption = ref([
       {
-        label: 'Postimees',
+        label: 'Newspapers',
         code: 'DE',
         items: [
-          { label: 'Cover page', value: 'Berlin' },
-          { label: 'Page 3', value: 'Frankfurt' },
-          { label: 'Text page', value: 'Hamburg' },
-          { label: 'Free placement', value: 'Munich' },
-          { label: 'Free time*', value: 'Munich' }
+          { label: 'Postimees', value: 'Berlin' },
+          { label: 'Äripäev', value: 'Frankfurt' },
+          { label: 'Õhtuleht', value: 'Hamburg' }
         ]
       },
       {
-        label: 'Äripäev',
+        label: 'Television',
         code: 'US',
-        items: [{ label: 'Free placement', value: 'Munich' }]
+        items: [{ label: 'Kanal 2', value: 'Munich' }]
       }
     ]);
     const onSortChange = event => {
