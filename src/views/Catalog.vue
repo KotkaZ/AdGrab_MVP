@@ -92,7 +92,7 @@
             <div class="product-grid-item-bottom">
               <span class="product-price">{{ slotProps.data.price }}€</span>
               <div class="p-d-fluid">
-              <Button icon="pi pi-info-circle" class="p-button-secondary"  @mouseover="toggle" @mouseleave="toggle" label="More info"/>
+              <Button icon="pi pi-info-circle" class="p-button-secondary"  @click="toggle" label="More info"/>
               <Button icon="pi pi-shopping-cart" class="p-ml-3 p-button-success" @click="displayConfirm = !displayConfirm" label="Buy" />
               </div>
             </div>
