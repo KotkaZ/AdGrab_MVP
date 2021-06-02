@@ -1,7 +1,7 @@
 <template>
   <Nav/>
   <Dialog header="Add to cart" :visible="displayConfirm" >
-    <div class="p-grid">
+    <div class="p-grid p-fluid">
       <label class="p-col-12" for="multiple">Select dates</label>
       
       <Calendar class="p-col-12" id="multiple" v-model="dates1" selectionMode="multiple" :manualInput="false" />
@@ -13,7 +13,7 @@
             </template>
         </FileUpload>
 
-      <Button icon="pi pi-shopping-cart">Add to cart</Button>
+      <Button class="p-col-12 p-field" icon="pi pi-shopping-cart" @click="$router.push('cart')">Add to cart</Button>
     </div>
   </Dialog>
 
