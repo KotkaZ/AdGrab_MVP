@@ -1,5 +1,14 @@
 exports.data = [
   {
+    name: 'Cover of Äripäev',
+    image:
+      'https://reklaam.postimeesgrupp.ee/wp-content/uploads/2019/09/Trykk_HK_MK_1_1.png',
+    advertiser: 'Äripäev',
+    description: '277×367 (1/1)',
+    price: 3189,
+    size: 277 * 367
+  },
+  {
     name: 'Cover of Postimees',
     image:
       'https://reklaam.postimeesgrupp.ee/wp-content/uploads/2019/09/Trykk_HK_MK_1_1.png',
