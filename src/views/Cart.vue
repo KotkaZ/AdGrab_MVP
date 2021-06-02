@@ -14,7 +14,7 @@
         <h1>Total sum: 3900 €</h1>
       </div>
       <div class="p-col-8 p-grid p-jc-end">
-        <Button class="" icon="pi pi-shopping-cart" @click="$router.push('home')" label="Proceed to checkout"/>
+        <Button class="" icon="pi pi-shopping-cart" @click="$router.push('/')" label="Proceed to checkout"/>
       </div>
   </div>
 </template>
