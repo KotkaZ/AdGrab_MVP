@@ -10,7 +10,7 @@
           <Button
             class="p-button-lg p-button-rounded p-mt-3"
             label="Get started"
-            v-on:click="$router.push('catalog')"
+            @click="$router.push('catalog')"
           />
         </div>
       </div>
@@ -25,7 +25,7 @@
     </div>
     <div class="slide" id="slide-2" ref="slide2">
       <div class="p-grid p-m-0 p-py-6">
-        <div class="p-col-5">
+        <div class="p-col-5 p-offset-1">
           <img
             src="../assets/landing2.png"
             class="p-m-auto"
@@ -33,7 +33,7 @@
             width="460"
           />
         </div>
-        <div class="p-col-5 p-offset-1" id="pitch">
+        <div class="p-col-5 text" id="pitch">
           <p>
             In today's age advertising is really important but finding the
             perfect spot or combination of places to advertise on can get
@@ -49,7 +49,29 @@
         </div>
       </div>
     </div>
-    <div class="slide p-m-0 p-p-4" id="slide-3">
+    <div class="slide" id="slide-3">
+      <div class="p-grid p-m-0 p-py-6">
+        <div class="p-col-5 p-offset-1 p-pr-5" id="partner">
+          <p>
+            Become our business partner to increase the sales of your
+            advertisement service and overall income.
+          </p>
+          <Button
+            class="p-button-lg p-button-rounded p-mt-3"
+            label="Become a partner"
+          />
+        </div>
+        <div class="p-col-5 p-d-flex">
+          <img
+            src="../assets/landing3.png"
+            class="p-m-auto"
+            alt="Landing page image 3; &copy; LandingStock.com"
+            width="460"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="slide p-m-0 p-p-4" id="slide-footer">
       <p>&copy; AdGrab {{ new Date().getFullYear() }}</p>
     </div>
     <transition name="fade">
@@ -109,6 +131,8 @@ export default {
 <style lang="scss">
 .slide {
   font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  text-align: left;
 }
 
 #firm {
@@ -117,22 +141,17 @@ export default {
 
 #slide-1 {
   min-height: 90vh;
-
-  #info {
-    text-align: left;
-    padding: 0 4rem;
-  }
 }
 
-#slide-2 {
+#slide-2,
+#slide-footer {
   background-color: #22283a;
   // height: 100vh;
   color: white;
+}
 
-  #pitch {
-    text-align: left;
-    font-size: 1.25rem;
-  }
+#slide-footer {
+  text-align: center;
 }
 
 #scroller {
