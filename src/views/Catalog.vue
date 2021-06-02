@@ -1,5 +1,22 @@
 <template>
   <Nav/>
+  <Dialog header="Add to cart" :visible="displayConfirm" >
+    <div class="p-grid">
+      <label class="p-col-12" for="multiple">Select dates</label>
+      
+      <Calendar class="p-col-12" id="multiple" v-model="dates1" selectionMode="multiple" :manualInput="false" />
+
+      <h5 class="p-col-12">Advanced</h5>
+        <FileUpload class="p-col-12" name="demo[]" url="./upload.php" @upload="onUpload" :multiple="true" accept="image/*" :maxFileSize="1000000">
+            <template #empty>
+                <p>Drag and drop files to here to upload.</p>
+            </template>
+        </FileUpload>
+
+      <Button icon="pi pi-shopping-cart">Add to cart</Button>
+    </div>
+  </Dialog>
+
   <div class="card">
     <DataView
       :value="items"
@@ -73,7 +90,7 @@
 
             <div class="product-grid-item-bottom">
               <span class="product-price">{{ slotProps.data.price }}€</span>
-              <Button icon="pi pi-shopping-cart"></Button>
+              <Button icon="pi pi-shopping-cart" @click="displayConfirm = !displayConfirm"></Button>
             </div>
           </div>
         </div>
@@ -86,21 +103,36 @@
 import { ref } from 'vue';
 import DataView from 'primevue/dataview';
 import Dropdown from 'primevue/dropdown';
+import Calendar from 'primevue/calendar';
+import Dialog from 'primevue/dialog';
 import Button from 'primevue/button';
-import Nav from '../components/Nav'
+import FileUpload from 'primevue/fileupload';
+import Nav from '../components/Nav';
 import OverlayPanel from 'primevue/overlaypanel';
 import Listbox from 'primevue/listbox';
 import { data as catalogData } from '../assets/catalog_data';
 
 export default {
-  components: { DataView, Dropdown, Button, Nav, OverlayPanel, Listbox},
+  components: {
+    DataView,
+    Dropdown,
+    Calendar,
+    Dialog,
+    FileUpload,
+    Button,
+    Nav,
+    OverlayPanel,
+    Listbox
+  },
   setup() {
     const items = ref(catalogData);
     const layout = ref('grid');
     const sortKey = ref();
     const sortOrder = ref();
+    const dates1 = ref();
     const selectedGroupedCity = ref();
     const sortField = ref();
+    const displayConfirm = ref(false);
     const sortOptions = ref([
       { label: 'Price High to Low', value: '!price' },
       { label: 'Price Low to High', value: 'price' }
@@ -143,26 +175,28 @@ export default {
         sortField.value = value;
         sortKey.value = sortValue;
       }
-    }
+    };
 
     return {
       items,
       layout,
       sortKey,
+      displayConfirm,
       selectedGroupedCity,
       sizes,
       sortOrder,
       filerOption,
+      dates1,
       sortField,
       sortOptions,
-      onSortChange,
+      onSortChange
     };
   },
-    methods: {
-        toggle(event) {
-            this.$refs.op.toggle(event);
-        },
-    },
+  methods: {
+    toggle(event) {
+      this.$refs.op.toggle(event);
+    }
+  }
 };
 </script>
 
@@ -199,8 +233,8 @@ export default {
   vertical-align: middle;
 }
 .infoImage {
-    width: 30%;
-  }
+  width: 30%;
+}
 
 ::v-deep(.product-list-item) {
   display: flex;
@@ -263,8 +297,6 @@ export default {
     font-size: 1.5rem;
     font-weight: 600;
   }
-
-  
 }
 
 @media screen and (max-width: 576px) {
@@ -296,7 +328,6 @@ export default {
       align-items: center;
       width: 100%;
     }
-
   }
 }
 </style>
