@@ -1,9 +1,9 @@
 <template>
   <div id="home">
     <div class="slide p-grid p-m-0" id="slide-1">
-      <div class="p-col-10 p-md-5 p-offset-1">
-        <div id="info">
-          <h1 id="firm" class="p-pt-4">AdGrab</h1>
+      <div class="p-col-10 p-md-5 p-offset-1 p-grid p-ai-center">
+        <div id="info" class="p-col">
+          <h1 id="firm">AdGrab</h1>
           <h2 id="slogan">
             Build your own advertisement campaign with confidence
           </h2>
@@ -14,7 +14,7 @@
           />
         </div>
       </div>
-      <div class="p-col-10 p-md-5 p-m-0 p-p-0 p-grid">
+      <div class="p-col-10 p-col p-md-5 p-m-0 p-p-0 p-grid">
         <img
           src="../assets/landing.png"
           class="p-m-auto"
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="slide" id="slide-2" ref="slide2">
-      <div class="p-grid p-m-0 p-py-6">
+      <div class="p-grid p-m-0 p-py-6 p-ai-center h-screen">
         <div class="p-col-5 p-offset-1">
           <img
             src="../assets/landing2.png"
@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="slide" id="slide-3">
-      <div class="p-grid p-m-0 p-py-6">
+      <div class="p-grid p-m-0 p-py-6 h-screen">
         <div
           class="p-col-5 p-offset-1 p-pr-5 p-d-flex p-flex-column p-jc-center"
           id="partner"
@@ -168,6 +168,10 @@ export default {
 .justify {
   text-align: justify;
   text-justify: inter-word;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .fade-enter-active,
