@@ -10,8 +10,8 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String,
-    sideMsg: String
-  }
+    sideMsg: String,
+  },
 };
 </script>
 

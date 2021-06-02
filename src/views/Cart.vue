@@ -28,40 +28,40 @@ export default {
   components: {
     Steps,
     Button,
-    Nav
+    Nav,
   },
   data() {
     return {
       items: [
         {
           label: 'Overview',
-          to: '/steps'
+          to: '/steps',
         },
         {
           label: 'Payment',
-          to: '/steps/seat'
+          to: '/steps/seat',
         },
         {
           label: 'Confirmation',
-          to: '/steps/payment'
-        }
+          to: '/steps/payment',
+        },
       ],
       cart_items: [
         {
           name: 'Cover of Postimees',
           advertiser: 'Postimees',
           description: '289x289 (1/1)',
-          price: 2800
+          price: 2800,
         },
         {
           name: 'Cover of Postimees',
           advertiser: 'Postimees',
           description: '289x93 (1/4)',
-          price: 1100
-        }
-      ]
+          price: 1100,
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 

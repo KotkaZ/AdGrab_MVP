@@ -37,18 +37,18 @@ export default {
       items: [
         {
           label: 'Active Campaigns',
-          icon: 'pi pi-flag'
+          icon: 'pi pi-flag',
         },
         {
           label: 'Settings',
-          icon: 'pi pi-cog'
+          icon: 'pi pi-cog',
         },
         {
           label: 'Logout',
           icon: 'pi pi-sign-out',
-          to: '/'
-        }
-      ]
+          to: '/',
+        },
+      ],
     };
   },
   methods: {
@@ -60,10 +60,10 @@ export default {
         severity: 'success',
         summary: 'Success',
         detail: 'Data Saved',
-        life: 3000
+        life: 3000,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

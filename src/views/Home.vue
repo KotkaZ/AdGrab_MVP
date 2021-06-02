@@ -109,7 +109,7 @@ import { onMounted, ref } from 'vue';
 export default {
   name: 'Home',
   components: {
-    Button
+    Button,
   },
   setup() {
     const scrolled = ref(false);
@@ -127,7 +127,7 @@ export default {
     };
 
     return { scrolled, slide2, scrollToSlide2 };
-  }
+  },
 };
 </script>
 <style lang="scss">

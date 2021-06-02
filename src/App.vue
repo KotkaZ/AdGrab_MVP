@@ -14,11 +14,11 @@ import 'primeflex/primeflex.css';
 export default {
   components: {},
   methods: {
-    ...mapActions(['setupHeaders'])
+    ...mapActions(['setupHeaders']),
   },
   created() {
     this.setupHeaders();
-  }
+  },
 };
 </script>
 

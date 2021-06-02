@@ -126,7 +126,7 @@ export default {
     Button,
     Nav,
     OverlayPanel,
-    Listbox
+    Listbox,
   },
   setup() {
     const items = ref(catalogData);
@@ -139,14 +139,14 @@ export default {
     const displayConfirm = ref(false);
     const sortOptions = ref([
       { label: 'Price High to Low', value: '!price' },
-      { label: 'Price Low to High', value: 'price' }
+      { label: 'Price Low to High', value: 'price' },
     ]);
     const sizes = ref([
       { name: '1/1', code: 'NY' },
       { name: '1/2', code: 'RM' },
       { name: '1/4', code: 'LDN' },
       { name: '1/8', code: 'IST' },
-      { name: 'etc...', code: 'PRS' }
+      { name: 'etc...', code: 'PRS' },
     ]);
     const filerOption = ref([
       {
@@ -155,14 +155,14 @@ export default {
         items: [
           { label: 'Postimees', value: 'Berlin' },
           { label: 'Äripäev', value: 'Frankfurt' },
-          { label: 'Õhtuleht', value: 'Hamburg' }
-        ]
+          { label: 'Õhtuleht', value: 'Hamburg' },
+        ],
       },
       {
         label: 'Television',
         code: 'US',
-        items: [{ label: 'Kanal 2', value: 'Munich' }]
-      }
+        items: [{ label: 'Kanal 2', value: 'Munich' }],
+      },
     ]);
     const onSortChange = event => {
       const value = event.value.value;
@@ -191,14 +191,14 @@ export default {
       dates1,
       sortField,
       sortOptions,
-      onSortChange
+      onSortChange,
     };
   },
   methods: {
     toggle(event) {
       this.$refs.op.toggle(event);
-    }
-  }
+    },
+  },
 };
 </script>
 
