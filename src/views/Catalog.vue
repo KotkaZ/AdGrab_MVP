@@ -13,7 +13,7 @@
             </template>
         </FileUpload>
 
-      <Button class="p-col-12 p-field" icon="pi pi-shopping-cart" @click="$router.push('cart')">Add to cart</Button>
+      <Button class="p-col-12 confirm-button" icon="pi pi-shopping-cart" @click="$router.push('cart')">Add to cart</Button>
     </div>
   </Dialog>
 
@@ -297,6 +297,9 @@ export default {
     font-size: 1.5rem;
     font-weight: 600;
   }
+}
+.confirm-button {
+  width: 100%;
 }
 
 @media screen and (max-width: 576px) {
