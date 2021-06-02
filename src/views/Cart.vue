@@ -11,18 +11,23 @@
         <p class="p-col-6  p-m-0">{{ i.price }}</p>
       </div>
       <div class="p-col-8 p-grid p-jc-end">
-        <h1>Total sum: XXX</h1>
+        <h1>Total sum: 3900 €</h1>
+      </div>
+      <div class="p-col-8 p-grid p-jc-end">
+        <Button class="" icon="pi pi-shopping-cart" @click="$router.push('home')" label="Proceed to checkout"/>
       </div>
   </div>
 </template>
 
 <script>
 import Steps from 'primevue/steps';
+import Button from 'primevue/button';
 import Nav from '@/components/Nav';
 
 export default {
   components: {
     Steps,
+    Button,
     Nav
   },
   data() {
