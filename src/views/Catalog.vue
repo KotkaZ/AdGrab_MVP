@@ -14,7 +14,7 @@
         </FileUpload>
 
         <h5 class="p-col-12">Location preview</h5>
-        <img class="p-col-2" src="@/assets/Preview.png"/>
+        <img class="p-col-1" src="@/assets/Preview.png"/>
 
       <Button class="p-col-12 confirm-button" icon="pi pi-shopping-cart" @click="$router.push('cart')">Add to cart</Button>
     </div>
@@ -64,7 +64,7 @@
                   slotProps.data.advertiser
                 }}</span>
               </div>
-              <i class="pi pi-info-circle p-jc-end"  @mouseover="toggle" @mouseleave="toggle"></i>
+              
         <OverlayPanel ref="op" appendTo="body"  id="overlay_panel" style="width: 50%">
             <img class="infoImage" src="../assets/info1.png">
             <img class="infoImage" src="../assets/info2.png">
@@ -91,7 +91,10 @@
 
             <div class="product-grid-item-bottom">
               <span class="product-price">{{ slotProps.data.price }}€</span>
-              <Button icon="pi pi-shopping-cart" @click="displayConfirm = !displayConfirm"></Button>
+              <div class="p-d-fluid">
+              <Button icon="pi pi-info-circle" class="p-button-secondary"  @mouseover="toggle" @mouseleave="toggle" label="More info"/>
+              <Button icon="pi pi-shopping-cart" class="p-ml-3 p-button-success" @click="displayConfirm = !displayConfirm" label="Buy" />
+              </div>
             </div>
           </div>
         </div>
